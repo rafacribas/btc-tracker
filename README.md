@@ -1,14 +1,8 @@
 # btc-usd
 
-This template should help get you started developing with Vue 3 in Vite.
+Quick BTC tracker project using Vue 3 composition API.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+USD to BTC requests are limited, so I added the option to track CNY values instead (which is infinite): Just click the 'Get unlimited updates!' text
 
 ## Project Setup
 
@@ -16,20 +10,9 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### .env variables
 
 ```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+VITE_BASE_URL='https://www.alphavantage.co/query'
+VITE_API_KEY='your_alphavantage_key'
 ```
