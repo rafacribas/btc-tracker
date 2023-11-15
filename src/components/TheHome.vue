@@ -1,29 +1,60 @@
 <template>
-  <button style="margin: 20px;" @click="exchangeStore.fetchExchangeData()">get real time datA now!!</button>
-  <div>
-    {{ exchangeStore.exchangeData }}
+  <div class="home-wrapper">
+    <h1 class="title">
+      {{ exchangeStore.currency }} to Bitcoin Live Tracker
+    </h1>
+    <Subtitle />
+    <div>
+      <TheDataTable :data="exchangeStore.$state.exchangeRateHistory" />
+    </div>
   </div>
-  <div v-if="exchangeStore.loading">
-    loading!
-  </div>
-  <div v-if="exchangeStore.error">
-    ERROR!
-  </div>
-  data table
-  {{ exchangeStore.error }}
-  <TheDataTable />
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, ref, onBeforeUnmount } from 'vue';
 import { useExchangeStore } from '../stores/exchange'
 import TheDataTable from '../components/TheDataTable.vue'
+import Subtitle from '@/components/TheSubtitle.vue'
+const intervalId = ref(null);
+
 
 const exchangeStore = useExchangeStore();
 
 onMounted(async () => {
   exchangeStore.fetchExchangeData()
+
+  intervalId.value = setInterval(() => {
+    exchangeStore.fetchExchangeData();
+  }, 30000);
 })
+
+onBeforeUnmount(() => {
+  clearInterval(intervalId.value);
+});
 
 
 </script>
+
+<style scoped>
+.home-wrapper {
+  width: 70%;
+  height: 100%;
+  margin: 0px auto;
+}
+
+
+.title {
+  font-size: 48px;
+  margin: 8px 0px;
+  text-align: center;
+  font-weight: 300;
+  color: rgb(68, 71, 106);
+
+}
+
+@media (max-width: 1080px) {
+  .home-wrapper {
+    width: 100%;
+  }
+}
+</style>
