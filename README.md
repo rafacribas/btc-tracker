@@ -2,7 +2,9 @@
 
 Quick BTC tracker project using Vue 3 composition API.
 
-USD to BTC requests are limited, so I added the option to track CNY values instead (which is infinite): Just click the 'Get unlimited updates!' text
+USD to BTC requests are limited, so I added the option to track CNY values instead (which is infinite):
+
+Just click the 'Get unlimited updates!' text
 
 ## Project Setup
 
