@@ -12,9 +12,11 @@
       }">
         <template #body="slotProps">
           <div class="trend-wrapper">
-            <TrendIcon :trend="slotProps.data.trend" />
-            {{ slotProps.data.exchangeRate }}
-            <div class="diff-txt">
+            <TrendIcon :trend="slotProps.data.trend" style="width:25%" />
+            <div style="width:50%">
+              {{ slotProps.data.exchangeRate }}
+            </div>
+            <div class="diff-txt" style="width:25%">
               ({{ diffValue(slotProps.data.valueChange) }})
             </div>
           </div>
@@ -63,10 +65,10 @@ const rowStyle = (data) => {
 };
 </script>
 
-<style>
+<style lang="scss">
 .column-root {
   padding: 8px;
-  color: rgb(68, 71, 106);
+  color: $text-color;
 }
 
 .exchange-header {
@@ -87,7 +89,6 @@ const rowStyle = (data) => {
 
 .trend-wrapper {
   font-size: 18px;
-  font-weight: 500;
   display: flex;
   justify-content: space-between;
   width: 80%;
@@ -113,15 +114,12 @@ const rowStyle = (data) => {
 }
 
 .exchange-table {
-  box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
+  box-shadow: $box-shadow;
   border-radius: .55rem;
   width: 100%;
-  color: rgb(68, 71, 106);
   padding: 15px !important;
   border-collapse: collapse;
-  /* Add shadow effect */
   margin-bottom: 20px;
-  /* Add some space at the bottom */
 }
 
 .p-datatable-table {
@@ -137,6 +135,4 @@ const rowStyle = (data) => {
 .table-wrapper {
   height: 100%;
 }
-
-.exchange2 {}
 </style>

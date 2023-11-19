@@ -44,7 +44,7 @@ export const useExchangeStore = defineStore('exchange', () => {
       }
 
       const transformedObject = reactive({
-        exchangeRate: currentExchangeRate,
+        exchangeRate: data.value['5. Exchange Rate'],
         bidPrice: data.value['8. Bid Price'],
         askPrice: data.value['9. Ask Price'],
         lastRefreshed: formattedDate,
