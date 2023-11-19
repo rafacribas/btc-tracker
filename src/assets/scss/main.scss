@@ -1,0 +1,24 @@
+@import './variables';
+
+body{
+  background-color: $primary-color;
+  color: $text-color;
+}
+
+button{
+  color: $text-color;
+  box-shadow: $box-shadow-small;
+  font-weight: 100;
+  font-size: 12px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover{
+  transition: 2s;
+  box-shadow: $box-shadow-wider;
+}
+button:active{
+  box-shadow: $box-shadow-active
+}

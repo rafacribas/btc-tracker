@@ -17,7 +17,6 @@ import TheDataTable from '../components/TheDataTable.vue'
 import Subtitle from '@/components/TheSubtitle.vue'
 const intervalId = ref(null);
 
-
 const exchangeStore = useExchangeStore();
 
 onMounted(async () => {
@@ -35,7 +34,7 @@ onBeforeUnmount(() => {
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .home-wrapper {
   width: 70%;
   height: 100%;
@@ -48,7 +47,6 @@ onBeforeUnmount(() => {
   margin: 8px 0px;
   text-align: center;
   font-weight: 300;
-  color: rgb(68, 71, 106);
 
 }
 
