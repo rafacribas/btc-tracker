@@ -12,9 +12,11 @@
       }">
         <template #body="slotProps">
           <div class="trend-wrapper">
-            <TrendIcon :trend="slotProps.data.trend" />
-            {{ slotProps.data.exchangeRate }}
-            <div class="diff-txt">
+            <TrendIcon :trend="slotProps.data.trend" style="width:25%" />
+            <div style="width:50%">
+              {{ slotProps.data.exchangeRate }}
+            </div>
+            <div class="diff-txt" style="width:25%">
               ({{ diffValue(slotProps.data.valueChange) }})
             </div>
           </div>
@@ -87,7 +89,6 @@ const rowStyle = (data) => {
 
 .trend-wrapper {
   font-size: 18px;
-  font-weight: 500;
   display: flex;
   justify-content: space-between;
   width: 80%;
